@@ -1,11 +1,13 @@
 import "./styles/global.css";
 
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "./routes";
+
 function App() {
   return (
-    <div className="App">
-      <span className="text-orange-200 text-md font-lg">Vite + React</span>
-      <div className="card"></div>
-    </div>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 
