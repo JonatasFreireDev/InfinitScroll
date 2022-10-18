@@ -1,11 +1,9 @@
-import { useState } from "react";
+import "./styles/global.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <h1>Vite + React</h1>
+      <span className="text-orange-200 text-md font-lg">Vite + React</span>
       <div className="card"></div>
     </div>
   );
