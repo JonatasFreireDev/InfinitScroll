@@ -1,3 +1,5 @@
+import { ArrowIcon } from "./ArrowIcon";
+
 export interface ICardContent {
   author: string;
   title: string;
@@ -12,14 +14,16 @@ export function CardContent({
   link,
 }: ICardContent) {
   return (
-    <section>
-      <div>
-        <span>{author}</span>
-        <h2>{title}</h2>
-        <span>{description}</span>
+    <section className="flex  p-8">
+      <div className="flex flex-col justify-center">
+        <span className="font-sm text-sm text-gray-500">{author}</span>
+        <h2 className="font-lg text-lg text-orange-200 py-3">{title}</h2>
+        <span className="font-sm text-sm text-gray-500">{description}</span>
       </div>
-      <div>
-        <span>{author}</span>
+      <div className="flex items-end">
+        <a href={link}>
+          <ArrowIcon />
+        </a>
       </div>
     </section>
   );
