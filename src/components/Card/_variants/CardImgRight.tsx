@@ -26,7 +26,7 @@ export function CardImgRight({
         title={title}
         link={link}
       />
-      <CardComponent.Image src={src} title={title} size={size} />
+      <CardComponent.Image src={src} title={title} />
     </CardComponent.Root>
   );
 }

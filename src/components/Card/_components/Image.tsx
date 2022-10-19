@@ -1,16 +1,11 @@
 export interface ICardImage {
   title: string;
   src: string;
-  size?: "md" | "lg";
 }
 
-export function CardImage({ title, src, size = "md" }: ICardImage) {
+export function CardImage({ title, src }: ICardImage) {
   return (
-    <div
-      className={`flex max-h-full bg-gray-500 ${
-        size === "md" ? "w-[40%]" : "w-[50%]"
-      }`}
-    >
+    <div className={`flex h-auto bg-gray-500`}>
       <img className="flex max-w-full h-auto" src={src} alt={title} />
     </div>
   );
