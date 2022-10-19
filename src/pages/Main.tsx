@@ -1,5 +1,8 @@
 import { Card, CardImgRight, ICard } from "../components";
 
+import { useOberser } from "../hooks/useOberser";
+import { useRef } from "react";
+
 const teste: ICard = {
   author: "Jonatas Freire",
   description: "Loren Loren Loren Loren Loren Loren Loren Loren ",
@@ -9,6 +12,12 @@ const teste: ICard = {
 };
 
 export default function Main() {
+  const loader = useRef<HTMLDivElement>(document.createElement("div"));
+
+  const { isEntry } = useOberser(loader);
+
+  console.log(isEntry);
+
   return (
     <div className="mt-14">
       <section className="flex flex-auto mt-14">
@@ -27,6 +36,8 @@ export default function Main() {
       <section className="flex flex-auto mt-14">
         <Card {...teste} size="lg" />
       </section>
+
+      <div ref={loader}> Loading...</div>
     </div>
   );
 }
