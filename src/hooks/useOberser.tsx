@@ -5,7 +5,7 @@ interface IUseObserver extends MutableRefObject<HTMLDivElement> {}
 export function useOberser({ current }: IUseObserver) {
   const [isEntry, setIsEntry] = useState(false);
 
-  const handleObserver: IntersectionObserverCallback = (entries, observer) => {
+  const handleObserver: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       setIsEntry(entry.isIntersecting);
     });
