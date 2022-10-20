@@ -11,17 +11,31 @@ export interface IPostsProps {
   imageUrl: string;
 }
 
-export const getPosts = async (page: number): Promise<IPostsProps[]> => {
-  const limitPerPage = 6;
+export interface IGetPosts {
+  page: number;
+  limitPerPage?: number;
+}
+
+export const getPosts = async ({
+  page,
+  limitPerPage = 6,
+}: IGetPosts): Promise<IPostsProps[]> => {
   const { data } = await api.get(
     `articles?_limit=${limitPerPage}&_page=${page}`
   );
 
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(1);
+    }, 3000);
+  });
+
   return data;
 };
 
-export function useUsers(page: number) {
-  return useQuery(["posts", page], () => getPosts(page), {
+export function useUsers(props: IGetPosts) {
+  return useQuery(["posts", props], () => getPosts(props), {
     staleTime: 1000 * 5,
+    keepPreviousData: true,
   });
 }

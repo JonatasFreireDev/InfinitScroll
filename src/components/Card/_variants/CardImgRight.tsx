@@ -11,22 +11,22 @@ export interface ICardImgRight
     ICardContent {}
 
 export function CardImgRight({
-  src,
+  id,
+  imageUrl,
   size,
   author,
-  description,
+  article,
   title,
-  link,
 }: ICardImgRight) {
   return (
     <CardComponent.Root size={size}>
       <CardComponent.Content
+        id={id}
         author={author}
-        description={description}
+        article={article}
         title={title}
-        link={link}
       />
-      <CardComponent.Image src={src} title={title} />
+      <CardComponent.Image imageUrl={imageUrl} title={title} />
     </CardComponent.Root>
   );
 }

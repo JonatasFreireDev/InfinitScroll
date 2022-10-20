@@ -10,15 +10,15 @@ export interface ICard
     ICardImage,
     ICardContent {}
 
-export function Card({ src, size, author, description, title, link }: ICard) {
+export function Card({ imageUrl, size, author, article, title, id }: ICard) {
   return (
     <CardComponent.Root size={size}>
-      <CardComponent.Image src={src} title={title} />
+      <CardComponent.Image imageUrl={imageUrl} title={title} />
       <CardComponent.Content
+        id={id}
         author={author}
-        description={description}
+        article={article}
         title={title}
-        link={link}
       />
     </CardComponent.Root>
   );

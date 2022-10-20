@@ -30,6 +30,20 @@ module.exports = {
       fontFamily: {
         sans: "Rubik",
       },
+      animation: {
+        appearFromRight: "appearFromRight 1s",
+        appearFromLeft: "appearFromLeft 1s",
+      },
+      keyframes: {
+        appearFromRight: {
+          "0%": { opacity: 0, transform: "translateX(-50px)" },
+          "100%": { opacity: 1, transform: "translateX(0px)" },
+        },
+        appearFromLeft: {
+          "0%": { opacity: 0, transform: "translateX(+50px)" },
+          "100%": { opacity: 1, transform: "translateX(0px)" },
+        },
+      },
     },
     screens: {
       "2xl": { max: "1535px" },

@@ -1,15 +1,18 @@
-import { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject, useCallback, useEffect, useState } from "react";
 
 interface IUseObserver extends MutableRefObject<HTMLDivElement> {}
 
 export function useOberser({ current }: IUseObserver) {
   const [isEntry, setIsEntry] = useState(false);
 
-  const handleObserver: IntersectionObserverCallback = (entries) => {
-    entries.forEach((entry) => {
-      setIsEntry(entry.isIntersecting);
-    });
-  };
+  const handleObserver: IntersectionObserverCallback = useCallback(
+    (entries) => {
+      entries.forEach((entry) => {
+        setIsEntry(entry.isIntersecting);
+      });
+    },
+    []
+  );
 
   useEffect(() => {
     const options: IntersectionObserverInit = {

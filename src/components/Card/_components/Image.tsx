@@ -1,12 +1,16 @@
 export interface ICardImage {
   title: string;
-  src: string;
+  imageUrl: string;
 }
 
-export function CardImage({ title, src }: ICardImage) {
+export function CardImage({ title, imageUrl }: ICardImage) {
   return (
     <div className={`flex h-auto bg-gray-500`}>
-      <img className="flex max-w-full h-auto" src={src} alt={title} />
+      <img
+        className="flex max-w-full h-auto object-cover"
+        src={imageUrl}
+        alt={title}
+      />
     </div>
   );
 }
