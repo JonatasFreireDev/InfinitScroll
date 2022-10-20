@@ -1,6 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
 
+import { useModal } from "../../context";
+
 export function Layout() {
+  const { toggleModal } = useModal();
+
   return (
     <>
       <header className="flex items-center justify-evenly bg-gray-500  text-white">
@@ -13,7 +17,9 @@ export function Layout() {
           <Link to={"/"} className="mx-3">
             Posts
           </Link>
-          <span className="mx-3">Contact</span>
+          <span onClick={() => toggleModal()} className="mx-3">
+            Contact
+          </span>
         </section>
       </header>
       <Outlet />
