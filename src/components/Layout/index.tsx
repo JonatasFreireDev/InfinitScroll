@@ -1,9 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
 
+import { ContactModal } from "../Modal/templates";
 import { useModal } from "../../context";
 
 export function Layout() {
-  const { toggleModal } = useModal();
+  const { setContentModal } = useModal();
 
   return (
     <>
@@ -17,7 +18,10 @@ export function Layout() {
           <Link to={"/"} className="mx-3">
             Posts
           </Link>
-          <span onClick={() => toggleModal()} className="mx-3">
+          <span
+            onClick={() => setContentModal(<ContactModal />)}
+            className="mx-3"
+          >
             Contact
           </span>
         </section>
