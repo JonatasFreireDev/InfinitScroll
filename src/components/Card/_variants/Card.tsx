@@ -6,13 +6,23 @@ import {
 } from "../_components";
 
 export interface ICard
-  extends Omit<ICardRoot, "children">,
+  extends Omit<ICardRoot, "children" | "className">,
     ICardImage,
-    ICardContent {}
+    ICardContent {
+  classRoot?: string;
+}
 
-export function Card({ imageUrl, size, author, article, title, id }: ICard) {
+export function Card({
+  imageUrl,
+  size,
+  author,
+  article,
+  title,
+  id,
+  classRoot,
+}: ICard) {
   return (
-    <CardComponent.Root size={size}>
+    <CardComponent.Root size={size} className={classRoot}>
       <CardComponent.Image imageUrl={imageUrl} title={title} />
       <CardComponent.Content
         id={id}

@@ -39,7 +39,12 @@ export default function Main() {
             </section>
 
             <section className="flex flex-auto mt-14 justify-end md:flex-col md:justify-center md:items-center">
-              <Card {...data[2]} size="lg" appearFrom="appearFromLeft" />
+              <Card
+                {...data[2]}
+                size="lg"
+                classRoot="max-w-[75%]"
+                appearFrom="appearFromLeft"
+              />
             </section>
 
             <section className="flex flex-auto mt-14 md:flex-col md:justify-center md:items-center">
@@ -48,7 +53,12 @@ export default function Main() {
             </section>
 
             <section className="flex flex-auto mt-14 md:flex-col md:justify-center md:items-center">
-              <Card {...data[5]} size="lg" appearFrom="appearFromRight" />
+              <Card
+                {...data[5]}
+                size="lg"
+                classRoot="max-w-[75%]"
+                appearFrom="appearFromRight"
+              />
             </section>
           </div>
         );

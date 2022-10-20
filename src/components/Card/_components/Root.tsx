@@ -4,9 +4,15 @@ export interface ICardRoot {
   children: ReactNode;
   size?: "md" | "lg";
   appearFrom?: "appearFromLeft" | "appearFromRight";
+  className?: string;
 }
 
-export function CardRoot({ size = "md", appearFrom, children }: ICardRoot) {
+export function CardRoot({
+  size = "md",
+  appearFrom,
+  className,
+  children,
+}: ICardRoot) {
   const ref = useRef<HTMLDivElement>(document.createElement("div"));
   const [visible, setVisible] = useState(false);
 
@@ -29,12 +35,12 @@ export function CardRoot({ size = "md", appearFrom, children }: ICardRoot) {
 
   return (
     <div
-      className={`flex w-full bg-white lg:flex-col ${
-        size === "md" ? "h-auto" : "min-h-[640px] lg:min-h-full"
-      }
+      className={`flex w-full bg-white lg:flex-col 
+      ${className}
+      ${size === "md" ? "h-auto" : "min-h-[640px] lg:min-h-full"}
       transition-all duration-500 ${
         appearFrom && visible ? `animate-${appearFrom}` : ""
-      }`}
+      } `}
       ref={ref}
     >
       {children}
