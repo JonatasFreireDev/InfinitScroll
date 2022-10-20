@@ -3,14 +3,14 @@ import { PuffLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { usePost } from "../services";
 
-export function Post() {
+export default function Post() {
   const { postId } = useParams();
 
   const { data, isLoading, isError } = usePost({ postId });
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center w-screen h-screen">
+      <div className="flex justify-center items-center w-[90vw] h-[90vh]">
         <PuffLoader />
       </div>
     );
@@ -25,7 +25,10 @@ export function Post() {
       <header>
         <BigCard {...data} />
       </header>
-      <article className="flex p-28">{data.article}</article>
+      <article
+        dangerouslySetInnerHTML={{ __html: data.article }}
+        className="flex flex-col p-28 font-sm text-sm text-gray-500"
+      />
     </main>
   );
 }

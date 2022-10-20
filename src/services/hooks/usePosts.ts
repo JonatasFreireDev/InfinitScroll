@@ -35,7 +35,7 @@ export const getPosts = async ({
 
 export function usePosts(props: IGetPosts) {
   return useQuery(["posts", props], () => getPosts(props), {
-    staleTime: 1000 * 5,
+    staleTime: Infinity,
     keepPreviousData: true,
   });
 }

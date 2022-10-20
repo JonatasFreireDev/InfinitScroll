@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { PuffLoader } from "react-spinners";
 import { useOberser } from "../hooks/useOberser";
 
-export function Main() {
+export default function Main() {
   const loader = useRef<HTMLDivElement>(document.createElement("div"));
   const [page, setPage] = useState(1);
   const [pageData, setPageData] = useState<Array<Array<IPostsProps>>>([]);
@@ -29,35 +29,38 @@ export function Main() {
     <>
       {pageData.map((data) => {
         return (
-          <div className="mt-14" key={page + data[0].id}>
+          <div
+            className="mt-14"
+            key={page + data[0].id + new Date().getSeconds()}
+          >
             <section className="flex flex-auto mt-14 md:flex-col md:justify-center md:items-center">
-              <Card {...data[0]} />
-              <Card {...data[1]} />
+              <Card {...data[0]} appearFrom="appearFromLeft" />
+              <Card {...data[1]} appearFrom="appearFromLeft" />
             </section>
 
             <section className="flex flex-auto mt-14 justify-end md:flex-col md:justify-center md:items-center">
-              <Card {...data[2]} size="lg" />
+              <Card {...data[2]} size="lg" appearFrom="appearFromLeft" />
             </section>
 
             <section className="flex flex-auto mt-14 md:flex-col md:justify-center md:items-center">
-              <CardImgRight {...data[3]} />
-              <CardImgRight {...data[4]} />
+              <CardImgRight {...data[3]} appearFrom="appearFromRight" />
+              <CardImgRight {...data[4]} appearFrom="appearFromRight" />
             </section>
 
             <section className="flex flex-auto mt-14 md:flex-col md:justify-center md:items-center">
-              <Card {...data[5]} size="lg" />
+              <Card {...data[5]} size="lg" appearFrom="appearFromRight" />
             </section>
           </div>
         );
       })}
-
-      <div ref={loader} />
 
       {(isFetching || isLoading) && (
         <div className="flex justify-center items-center w-full h-60">
           <PuffLoader />
         </div>
       )}
+
+      <div ref={loader} />
     </>
   );
 }

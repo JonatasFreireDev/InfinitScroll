@@ -29,7 +29,6 @@ export const getPost = async ({ postId }: IGetPost): Promise<IPostProps> => {
 
 export function usePost(props: IGetPost) {
   return useQuery(["post", props], () => getPost(props), {
-    staleTime: 1000 * 5,
-    keepPreviousData: true,
+    staleTime: Infinity,
   });
 }

@@ -23,7 +23,10 @@ export function CardContent({ author, title, article, id }: ICardContent) {
       <div className="flex flex-col justify-center p-8">
         <span className="font-sm text-sm text-gray-500">{author}</span>
         <h2 className="font-lg text-lg text-orange-200 py-3">{reduceTitle}</h2>
-        <span className="font-sm text-sm text-gray-500">{reduceArticle}</span>
+        <div
+          dangerouslySetInnerHTML={{ __html: reduceArticle }}
+          className="font-sm text-sm text-gray-500"
+        />
       </div>
       <div className="flex items-end p-5 md:justify-end">
         <Link to={`post/${id}`}>
