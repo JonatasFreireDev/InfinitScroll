@@ -1,4 +1,5 @@
 import { ArrowIcon } from "./ArrowIcon";
+import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
 export interface ICardContent {
@@ -8,13 +9,13 @@ export interface ICardContent {
   article: string;
 }
 
-export function CardContent({ author, title, article }: ICardContent) {
+export function CardContent({ author, title, article, id }: ICardContent) {
   const reduceTitle = useMemo(() => {
     return title.substring(0, 30) + "...";
   }, []);
 
   const reduceArticle = useMemo(() => {
-    return article.substring(0, 100) + "...";
+    return article?.substring(0, 100) + "...";
   }, []);
 
   return (
@@ -25,9 +26,9 @@ export function CardContent({ author, title, article }: ICardContent) {
         <span className="font-sm text-sm text-gray-500">{reduceArticle}</span>
       </div>
       <div className="flex items-end p-5 md:justify-end">
-        <a href={"#"}>
+        <Link to={`post/${id}`}>
           <ArrowIcon />
-        </a>
+        </Link>
       </div>
     </section>
   );

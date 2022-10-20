@@ -29,10 +29,8 @@ export function CardRoot({ size = "md", appearFrom, children }: ICardRoot) {
 
   return (
     <div
-      className={`flex bg-white lg:flex-col ${
-        size === "md"
-          ? "w-[50%] max-w-[50%] h-auto"
-          : "w-[75%] max-w-[75%] min-h-[640px]"
+      className={`flex w-full bg-white lg:flex-col ${
+        size === "md" ? "h-auto" : "min-h-[640px] lg:min-h-full"
       }
       transition-all duration-500 ${
         appearFrom && visible ? `animate-${appearFrom}` : ""

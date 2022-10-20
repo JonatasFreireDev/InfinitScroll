@@ -33,7 +33,7 @@ export const getPosts = async ({
   return data;
 };
 
-export function useUsers(props: IGetPosts) {
+export function usePosts(props: IGetPosts) {
   return useQuery(["posts", props], () => getPosts(props), {
     staleTime: 1000 * 5,
     keepPreviousData: true,

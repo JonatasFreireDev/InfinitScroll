@@ -1,17 +1,17 @@
 import { Card, CardImgRight } from "../components";
-import { IPostsProps, useUsers } from "../services";
+import { IPostsProps, usePosts } from "../services";
 import { useEffect, useRef, useState } from "react";
 
 import { PuffLoader } from "react-spinners";
 import { useOberser } from "../hooks/useOberser";
 
-export default function Main() {
+export function Main() {
   const loader = useRef<HTMLDivElement>(document.createElement("div"));
   const [page, setPage] = useState(1);
   const [pageData, setPageData] = useState<Array<Array<IPostsProps>>>([]);
   const { isEntry } = useOberser(loader);
 
-  const { data, isLoading, isFetching } = useUsers({
+  const { data, isLoading, isFetching } = usePosts({
     page: page,
   });
 
@@ -34,6 +34,7 @@ export default function Main() {
               <Card {...data[0]} />
               <Card {...data[1]} />
             </section>
+
             <section className="flex flex-auto mt-14 justify-end md:flex-col md:justify-center md:items-center">
               <Card {...data[2]} size="lg" />
             </section>
