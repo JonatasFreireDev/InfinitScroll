@@ -8,11 +8,20 @@ import { useOberser } from "../hooks/useOberser";
 export default function Main() {
   const loader = useRef<HTMLDivElement>(document.createElement("div"));
   const [page, setPage] = useState(1);
+  const [realyPage, setRealyPage] = useState(1);
   const [pageData, setPageData] = useState<Array<Array<IPostsProps>>>([]);
   const { isEntry } = useOberser(loader);
 
   const { data, isLoading, isFetching } = usePosts({
-    page: page,
+    page: realyPage,
+  });
+
+  useEffect(() => {
+    return () => {
+      setPageData([]);
+      setPage(1);
+      setRealyPage(1);
+    };
   });
 
   useEffect(() => {
@@ -22,6 +31,8 @@ export default function Main() {
   useEffect(() => {
     if (data) {
       setPageData((old) => [...old, [...data]]);
+      setRealyPage((old) => old + 1);
+      setPage(realyPage);
     }
   }, [data]);
 
