@@ -7,9 +7,7 @@ export function useOberser({ current }: IUseObserver) {
 
   const handleObserver: IntersectionObserverCallback = useCallback(
     (entries) => {
-      entries.forEach((entry) => {
-        setIsEntry(entry.isIntersecting);
-      });
+      entries.forEach((entry) => setIsEntry(entry.isIntersecting));
     },
     []
   );

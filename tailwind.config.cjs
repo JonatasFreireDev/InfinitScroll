@@ -3,10 +3,10 @@ module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     fontSize: {
-      xs: 18,
-      sm: 24,
-      md: 32,
-      lg: 36,
+      xs: 14,
+      sm: 18,
+      md: 22,
+      lg: 28,
     },
     fontWeight: {
       sm: 400,
