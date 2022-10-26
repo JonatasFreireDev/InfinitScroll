@@ -1,11 +1,12 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import {
   createRoutesFromElements,
   createBrowserRouter,
   Route,
 } from "react-router-dom";
 
-import { Layout, ScrollToTop } from "../components";
+import { Layout } from "../components";
+import { RequireAuth } from "./RequireAuth";
 
 const Main = lazy(() => import("../pages/Main"));
 const Post = lazy(() => import("../pages/Post"));
@@ -16,15 +17,21 @@ export const router = createBrowserRouter(
     <Route
       path="/"
       element={
-        <Suspense fallback={<div>Carregando...</div>}>
-          <ScrollToTop />
+        <RequireAuth>
           <Layout />
-        </Suspense>
+        </RequireAuth>
       }
       errorElement={<Error />}
     >
       <Route index element={<Main />} />
-      <Route path="post/:postId" element={<Post />} />
+      <Route
+        path="post/:postId"
+        element={
+          <RequireAuth>
+            <Post />
+          </RequireAuth>
+        }
+      />
     </Route>
   )
 );
