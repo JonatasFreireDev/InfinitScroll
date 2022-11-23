@@ -23,7 +23,7 @@ export default function Main() {
   useEffect(() => {
     if (data) {
       for (const item of data) {
-        if (JSON.stringify(pageData).includes(item.id)) return;
+        if (JSON.stringify(pageData).includes(String(item.id))) return;
       }
     }
 
