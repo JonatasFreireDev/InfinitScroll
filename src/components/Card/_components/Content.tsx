@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
 export interface ICardContent {
-  id: string;
+  id: number;
   author: string;
   title: string;
   article: string;
