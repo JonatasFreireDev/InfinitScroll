@@ -58,23 +58,19 @@ export const getPost = async ({ postId }: IGetPost): Promise<IPostProps> => {
     `posts?id=${postId}`
   );
 
-  const { data: postUsers } = await api.get<IUsersProps[]>(
-    `users?id=${postId}`
-  );
+  const { data: postUsers } = await api.get<IUsersProps[]>(`users?id=1`);
 
-  const { data: postPhotos } = await api.get<IPhotosProps[]>(
-    `photos?id=${postId}`
-  );
+  const { data: postPhotos } = await api.get<IPhotosProps[]>(`photos?id=1`);
 
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve(1);
-    }, 3000);
+    }, 1000);
   });
 
   return {
     id: postData[0].id,
-    author: postUsers[0].name,
+    author: postUsers[0]?.name,
     authorEmail: postUsers[0].email,
     title: postData[0].title,
     article: postData[0].body,

@@ -23,15 +23,15 @@ interface IPostProps {
   body: string;
 }
 
-interface IPhotosProps {
+export interface IPhotosProps {
   albumId: number;
   id: number;
   title: string;
   url: string;
   thumbnailUrl: string;
 }
-interface IUsersProps {
-  id: 1;
+export interface IUsersProps {
+  id: number;
   name: string;
   username: string;
   email: string;
@@ -63,17 +63,17 @@ export const getPosts = async ({
   );
 
   const { data: postUsers } = await api.get<IUsersProps[]>(
-    `users?_limit=${limitPerPage}&_page=${page}`
+    `users?_limit=${limitPerPage}&_page=1`
   );
 
   const { data: postPhotos } = await api.get<IPhotosProps[]>(
-    `photos?_limit=${limitPerPage}&_page=${page}`
+    `photos?_limit=${limitPerPage}&_page=1`
   );
 
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve(1);
-    }, 3000);
+    }, 1000);
   });
 
   const mountedData = postData.map((post, i) => {
@@ -95,5 +95,6 @@ export function usePosts(props: IGetPosts) {
   return useQuery(["posts", props], () => getPosts(props), {
     staleTime: Infinity,
     cacheTime: 0,
+    enabled: false,
   });
 }

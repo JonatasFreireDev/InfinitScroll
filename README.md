@@ -1,8 +1,8 @@
-## Teste Coderockr - Front End
+## Infinite scrool - Front End
 
 ### Como Executar
 
-Para executar o projeto, voce precisa ter o node instalado na sua máquina, apartir da versao 16.0.
+Para executar o projeto, voce precisa ter o node instalado na sua máquina, apartir da versao 16.0.0
 
 Assim que baixar o repositório, entre na pasta pelo cmd, e troque de branch:
 
