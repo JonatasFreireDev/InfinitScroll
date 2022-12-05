@@ -23,3 +23,14 @@ Bibliotecas de terceiros ultilizadas:
 - React Hook Form - Simplifica a maneira de lidar com formularios.
 - Vite - Esse cara faz magicas
 - Framer Motion - facilita a vida para fazer animações.
+- React Router Dom v6 - navegação entre páginas.
+
+### Técnicas aplicadas
+
+- Lazy loading
+- Rotas Privadas
+- Lidando com Error Boundary
+- Intersection Observer
+- Context
+- Componentes Reutilizáveis
+- Novas features do React Router Dom v6
