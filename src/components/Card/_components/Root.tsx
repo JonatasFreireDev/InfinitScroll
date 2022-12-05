@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useRef } from "react";
+import { motion } from "framer-motion";
 
 export interface ICardRoot {
   children: ReactNode;
@@ -14,37 +15,54 @@ export function CardRoot({
   children,
 }: ICardRoot) {
   const ref = useRef<HTMLDivElement>(document.createElement("div"));
-  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const observer: IntersectionObserver = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting === true) setVisible(true);
+  const apper = {
+    left: {
+      initial: {
+        opacity: 0,
+        translateX: "-50px",
       },
-      { threshold: 0, rootMargin: "-150px" }
-    );
-
-    observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+      whileInView: {
+        opacity: 1,
+        translateX: "0px",
+      },
+    },
+    rigth: {
+      initial: {
+        opacity: 0,
+        translateX: "50px",
+      },
+      whileInView: {
+        opacity: 1,
+        translateX: "0px",
+      },
+    },
+  };
 
   return (
-    <div
-      className={`flex w-full bg-white lg:flex-col
+    <motion.div
+      initial={
+        appearFrom === "appearFromLeft"
+          ? apper.left.initial
+          : apper.rigth.initial
+      }
+      whileInView={
+        appearFrom === "appearFromLeft"
+          ? apper.left.whileInView
+          : apper.rigth.whileInView
+      }
+      viewport={{ once: true }}
+    >
+      <div
+        className={`flex w-full bg-white lg:flex-col
       ${className}
       ${size === "md" ? "h-auto" : "min-h-[440px] lg:min-h-full"}
-      transition-all duration-500 ${
-        appearFrom && visible ? `animate-${appearFrom}` : ""
-      } `}
-      ref={ref}
-    >
-      {children}
-    </div>
+      transition-all duration-500`}
+        ref={ref}
+      >
+        {children}
+      </div>
+    </motion.div>
   );
 }
 

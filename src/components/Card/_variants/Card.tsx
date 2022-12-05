@@ -16,13 +16,18 @@ export function Card({
   imageUrl,
   size,
   author,
+  appearFrom,
   article,
   title,
   id,
   classRoot,
 }: ICard) {
   return (
-    <CardComponent.Root size={size} className={classRoot}>
+    <CardComponent.Root
+      size={size}
+      className={classRoot}
+      appearFrom={appearFrom}
+    >
       <CardComponent.Image imageUrl={imageUrl} title={title} />
       <CardComponent.Content
         id={id}
