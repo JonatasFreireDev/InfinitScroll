@@ -15,11 +15,17 @@ export interface IBigCard
   date: string;
 }
 
-export function BigCard({ imageUrl, author, title, date }: IBigCard) {
+export function BigCard({
+  imageUrl,
+  author,
+  title,
+  date,
+  appearFrom,
+}: IBigCard) {
   const newDate = useMemo(() => formatDate(date), [date]);
 
   return (
-    <CardComponent.Root size="lg">
+    <CardComponent.Root size="lg" appearFrom={appearFrom}>
       <CardComponent.Image imageUrl={imageUrl} title={title} />
       <section className="flex justify-center w-[50%] flex-col m-auto mx-12 lg:w-full lg:items-center lg:mx-0 lg:mt-12">
         <span className="font-sm text-xs text-blue-800">{newDate}</span>

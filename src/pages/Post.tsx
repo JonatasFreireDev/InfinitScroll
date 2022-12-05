@@ -17,7 +17,12 @@ export default function Post() {
   }
 
   if (isError) {
-    return <div>Ocorreu algum erro !</div>;
+    return (
+      <div className="flex h-[calc(100vh-98px)] justify-center items-center bg-gray-500 bg-opacity-40 text-md text-center text-white">
+        Ocorreu algum erro, <br />
+        por favor, tente novamente !
+      </div>
+    );
   }
 
   return (
