@@ -35,9 +35,9 @@ export function CardRoot({
 
   return (
     <div
-      className={`flex w-full bg-white lg:flex-col 
+      className={`flex w-full bg-white lg:flex-col
       ${className}
-      ${size === "md" ? "h-auto" : "min-h-[640px] lg:min-h-full"}
+      ${size === "md" ? "h-auto" : "min-h-[440px] lg:min-h-full"}
       transition-all duration-500 ${
         appearFrom && visible ? `animate-${appearFrom}` : ""
       } `}
