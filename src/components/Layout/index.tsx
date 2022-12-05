@@ -11,7 +11,7 @@ export function Layout() {
       <header className="flex items-center justify-evenly bg-gray-500 text-white lg:px-10">
         <section className="w-[500px] my-7 text-lg font-lg ">
           <Link to={"/"}>
-            <h2>Rockr Blog</h2>
+            <h2>Infinity</h2>
           </Link>
         </section>
         <section className="my-7 text-md font-md ">

@@ -1,16 +1,10 @@
-## Teste Coderockr - Front End
+## Infinite scrool - Front End
 
 ### Como Executar
 
-Para executar o projeto, voce precisa ter o node instalado na sua máquina, apartir da versao 16.0.
+Para executar o projeto, voce precisa ter o node instalado na sua máquina, de preferencia na versão lts atual (18.12.0)
 
-Assim que baixar o repositório, entre na pasta pelo cmd, e troque de branch:
-
-```
-git checkout development
-```
-
-Então, instale as dependencias e execute o projeto:
+Assim que baixar o repositório, instale as dependencias e execute o projeto:
 
 ```
 npm i
@@ -28,11 +22,4 @@ Bibliotecas de terceiros ultilizadas:
 - React Query - Cache, e manipulação de requisições.
 - React Hook Form - Simplifica a maneira de lidar com formularios.
 - Vite - Esse cara faz magicas
-
-### Considerações do Desenvolvedor
-
-Foi bacana realizar o teste, não tenho muita familiaridade com o Tailwind (Sempre gostei do Styled Components, mas achei bacana esse ai tbm) e o React Query, então aprendi algumas coisinhas.
-
-Fiz o Scroll Infinito e o modal sem bibliotecas de terceiros, levou um tempo mas tbm foi bacana brincar com eles. (tem um baita de um bug no Scroll...)
-
-Desafio feito em 3 dias... Conciliando trabalho e faculdade ao mesmo tempo.
+- Framer Motion - facilita a vida para fazer animações.

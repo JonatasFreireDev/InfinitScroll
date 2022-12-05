@@ -15,11 +15,12 @@ export function CardImgRight({
   imageUrl,
   size,
   author,
+  appearFrom,
   article,
   title,
 }: ICardImgRight) {
   return (
-    <CardComponent.Root size={size}>
+    <CardComponent.Root size={size} appearFrom={appearFrom}>
       <CardComponent.Content
         id={id}
         author={author}
