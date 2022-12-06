@@ -5,7 +5,7 @@ export interface ICardImage {
 
 export function CardImage({ title, imageUrl }: ICardImage) {
   return (
-    <div className="flex items-center justify-center h-auto max-w-[50%] bg-gray-500 lg:max-w-full">
+    <div className="flex justify-center h-auto max-w-[50%] bg-gray-500 lg:max-w-full">
       <img
         className="flex max-w-full h-auto object-cover"
         src={imageUrl}
