@@ -21,7 +21,7 @@ export const Modal: React.FC<IModalProps> = ({ className, children }) => {
         className="fixed flex justify-center items-center bg-black bg-opacity-60 top-0 h-screen w-screen animate-appearFromNothing"
       >
         <section
-          className={`absolute bg-white rounded-[10px] min-h-[200px] w-[50%] max-w-3xl animate-appearFromTop !opacity-100 ${className}`}
+          className={`absolute bg-white rounded-[10px] min-h-[200px] w-[50%] sm:w-[90%] max-w-3xl animate-appearFromTop !opacity-100 ${className}`}
           onClick={(e) => e.stopPropagation()}
         >
           {children}

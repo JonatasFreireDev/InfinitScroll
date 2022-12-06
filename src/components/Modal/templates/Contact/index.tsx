@@ -32,7 +32,7 @@ export function ContactModal() {
           X
         </button>
       </header>
-      <section className="w-full px-20">
+      <section className="w-full px-20 sm:px-0 md:px-10">
         <form
           onSubmit={submit}
           className="flex flex-col justify-center items-center"
@@ -61,7 +61,7 @@ export function ContactModal() {
           />
           <button
             disabled={isSubmitting}
-            className="flex justify-around items-center w-56 h-16 p-4 m-3 bg-gray-500 text-white text-sm rounded transition-all ease-in hover:bg-gray-800 disabled:opacity-75"
+            className="flex justify-around items-center w-56 h-16 p-4 m-3 bg-gray-500 text-white text-sm rounded transition-all ease-in hover:bg-gray-800 disabled:opacity-75 md:h-12 md:w-44"
           >
             <Arrow />
             Submit

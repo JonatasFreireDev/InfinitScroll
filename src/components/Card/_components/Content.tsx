@@ -19,7 +19,7 @@ export function CardContent({ author, title, article, id }: ICardContent) {
   }, []);
 
   return (
-    <section className="flex h-full md:flex-col">
+    <section className="flex md:flex-col">
       <div className="flex flex-col justify-center p-8">
         <span className="font-sm text-sm text-gray-500">{author}</span>
         <h2 className="font-lg text-lg text-orange-200 py-3">{reduceTitle}</h2>
