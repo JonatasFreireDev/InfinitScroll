@@ -1,4 +1,4 @@
-import { ReactNode, Suspense } from "react";
+import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 import { ScrollToTop } from "../components";
 
@@ -16,9 +16,9 @@ export const RequireAuth = ({
   return !isLogin && isPrivate ? (
     <Navigate to={"/"} />
   ) : (
-    <Suspense fallback={<div>Carregando...</div>}>
+    <>
       <ScrollToTop />
       {children}
-    </Suspense>
+    </>
   );
 };

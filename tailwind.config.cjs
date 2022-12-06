@@ -13,23 +13,23 @@ module.exports = {
       md: 500,
       lg: 700,
     },
-    colors: {
-      white: "#FFFFFF",
-      black: "#000",
-      gray: {
-        800: "#342303",
-        500: "#2D2D2D",
-      },
-      blue: {
-        800: "#032937",
-      },
-      orange: {
-        200: "#F1A10A",
-      },
-    },
     extend: {
       fontFamily: {
         sans: "Rubik",
+      },
+      colors: {
+        white: "#FFFFFF",
+        black: "#000",
+        gray: {
+          800: "#342303",
+          500: "#2D2D2D",
+        },
+        blue: {
+          800: "#032937",
+        },
+        orange: {
+          200: "#F1A10A",
+        },
       },
       animation: {
         appearFromRight: "appearFromRight 1s",

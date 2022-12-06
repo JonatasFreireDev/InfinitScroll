@@ -1,9 +1,9 @@
 import { IPostsProps, usePosts } from "../services";
 import { useEffect, useRef, useState } from "react";
 
-import { PuffLoader } from "react-spinners";
 import { useOberser } from "../hooks/useOberser";
 import { ScrollItens } from "../components/ScrollItens";
+import { Loading } from "../components/Loading";
 
 export default function Main() {
   const loader = useRef<HTMLDivElement>(document.createElement("div"));
@@ -52,11 +52,7 @@ export default function Main() {
 
       <div ref={loader} />
 
-      {(isFetching || isLoading) && !endPage && (
-        <div className="flex justify-center items-center w-full h-60">
-          <PuffLoader />
-        </div>
-      )}
+      {(isFetching || isLoading) && !endPage && <Loading />}
     </>
   );
 }

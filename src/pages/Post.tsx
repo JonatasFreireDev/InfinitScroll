@@ -26,13 +26,13 @@ export default function Post() {
   }
 
   return (
-    <main className="flex flex-col m-auto bg-white max-w-5xl w-[1024px] my-24 lg:w-auto lg:mx-12">
+    <main className="flex flex-col m-auto bg-white max-w-5xl w-[80%] my-24 lg:w-auto lg:mx-12">
       <header>
         <BigCard {...data} />
       </header>
       <article
         dangerouslySetInnerHTML={{ __html: data.article }}
-        className="flex flex-col sm:p-3 p-28 font-sm text-sm text-gray-500"
+        className="flex min-h-[200px] justify-center items-center p-14 flex-col font-sm text-sm text-gray-500"
       />
     </main>
   );
