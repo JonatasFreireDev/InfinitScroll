@@ -32,7 +32,7 @@ export default function Post() {
       </header>
       <article
         dangerouslySetInnerHTML={{ __html: data.article }}
-        className="flex flex-col p-28 font-sm text-sm text-gray-500"
+        className="flex flex-col sm:p-3 p-28 font-sm text-sm text-gray-500"
       />
     </main>
   );

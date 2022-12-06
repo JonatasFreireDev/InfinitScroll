@@ -44,7 +44,7 @@ export default function Main() {
 
   return (
     <>
-      <div className="flex flex-wrap mt-14">
+      <div className="flex flex-wrap mt-5">
         {pageData.map((data, ind) => (
           <ScrollItens data={data} itemLeng={ind % 6} key={ind} />
         ))}

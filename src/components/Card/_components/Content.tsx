@@ -21,11 +21,15 @@ export function CardContent({ author, title, article, id }: ICardContent) {
   return (
     <section className="flex md:flex-col">
       <div className="flex flex-col justify-center p-8">
-        <span className="font-sm text-sm text-gray-500">{author}</span>
-        <h2 className="font-lg text-lg text-orange-200 py-3">{reduceTitle}</h2>
+        <span className="sm:text-xs font-sm text-sm text-gray-500">
+          {author}
+        </span>
+        <h2 className="sm:text-md font-lg text-lg text-orange-200 py-3">
+          {reduceTitle}
+        </h2>
         <div
           dangerouslySetInnerHTML={{ __html: reduceArticle }}
-          className="font-sm text-sm text-gray-500"
+          className="sm:text-xs font-sm text-sm text-gray-500"
         />
       </div>
       <div className="flex items-end p-5 md:justify-end">
